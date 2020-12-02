@@ -1,0 +1,11 @@
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.content_login{
+    margin-right: 50px;
+}
+h2{
+    text-align: center;
+}

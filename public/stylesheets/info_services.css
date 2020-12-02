@@ -1,0 +1,12 @@
+.info_services{
+    display: flex;
+    /*flex-direction: row;*/
+    flex-wrap: wrap;
+    /*align-content: center;*/
+    justify-content: center;
+}
+.content_info_services{
+    flex: 30%;
+    max-width: 30%;
+}
+

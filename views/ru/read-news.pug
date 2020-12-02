@@ -1,0 +1,24 @@
+include navbar_inner.pug
+.nav_header
+    a(href="/") Главная страница/
+    a(href="/news") Новости/
+    a(href="/news/show-news/" + id) #{heading}
+        .new_content
+            .inner_form_group-text
+                p#header #{heading}
+            .inner_form_group-img
+                img(src="/images/news/" + name alt="Man with backpack")
+            .inner_form_group-text
+                p #{description}
+    script.
+        $('#header').each(function () {
+            var $this = $(this);
+            var t = $this.text();
+            $this.html(t.replace('&lt', '<').replace('&gt', '>'));
+        });
+    script.
+        $('#description').each(function () {
+            var $this = $(this);
+            var t = $this.text();
+            $this.html(t.replace('&lt', '<').replace('&gt', '>'));
+        });

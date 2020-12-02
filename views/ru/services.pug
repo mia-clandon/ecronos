@@ -1,0 +1,17 @@
+include navbar.pug
+.nav_header
+    a(href="/") Главная страница/
+    a(href="/services") Услуги
+    h1.header_ser Услуги
+    #service_content_text.services_all_content
+        if data.length
+            each item in data
+                .content_service
+                    #service_header.service_header(style="font-size:18px; max-width:500px;")
+                      =item.heading
+                    #service_description.service_description(style="font-size:18px; max-width:500px;")
+                      =item.excerpt_description
+                    a(href='/services/read-services/'+item.id style="font-size:14px; color: #095A90;")
+                      |Прочитать подробнее
+
+

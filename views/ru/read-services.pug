@@ -1,0 +1,26 @@
+include navbar_inner.pug
+.nav_header
+    a(href="/") Главная страница/
+    a(href="/services") Услуги/
+    a#header(href="/services/read-services/"+ id) #{heading}
+    script.
+        $('#header').each(function () {
+            var $this = $(this);
+            var t = $this.text();
+            $this.html(t.replace('&lt', '<').replace('&gt', '>'));
+        });
+    h1#header_ser.header_ser #{heading}
+    script.
+        $('#header_ser').each(function () {
+            var $this = $(this);
+            var t = $this.text();
+            $this.html(t.replace('&lt', '<').replace('&gt', '>'));
+        });
+    .service_content
+        #service_content_text.service_content_text  #{description}
+    script.
+        $('#service_content_text').each(function(){
+            var $this = $(this);
+            var t = $this.text();
+        $this.html(t.replace('&lt','<').replace('&gt', '>'));
+        });

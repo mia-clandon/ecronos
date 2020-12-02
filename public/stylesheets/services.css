@@ -1,0 +1,107 @@
+.services_all_content{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+}
+
+.services_content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.inner_services_content{
+    border-bottom: 1px solid gray;
+    margin: 20px 30px;
+    width: 540px;
+    font-family: Roboto;
+    font-weight: lighter;
+}
+.service_header{
+    color: #007BFF;
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+.service_description{
+    color: black;
+    margin-bottom: 10px;
+    width:100%; height: 190px; overflow: hidden; padding: 5px; text-overflow: ellipsis; font-size: 14px;
+}
+@media (max-width: 1300px) {
+.services_all_content{
+    padding: 10px 100px;
+
+}
+}
+@media (max-width: 1240px) {
+    .services_all_content{
+        /*padding: 10px 20px;*/
+    }
+}
+@media (max-width: 1202px) {
+    .services_all_content{
+        padding: 10px 70px;
+    }
+}
+@media (max-width: 1182px) {
+    .services_all_content{
+        padding: 10px 60px;
+    }
+}
+@media (max-width: 1162px) {
+    .services_all_content{
+        padding: 10px 50px;
+    }
+}
+@media (max-width: 1143px) {
+    .services_all_content{
+        padding: 10px 40px;
+    }
+}
+@media (max-width: 1143px) {
+    .services_all_content{
+        padding: 10px 30px;
+    }
+}
+@media (max-width: 1085px) {
+    .services_all_content{
+        padding: 10px 10px;
+    }
+}
+@media (max-width: 1045px) {
+    .services_all_content{
+        padding: 10px 5px;
+    }
+}
+@media (max-width: 1035px) {
+    .services_all_content{
+        padding: 10px 0;
+    }
+}
+@media (max-width: 1025px) {
+    .services_all_content{
+        padding: 10px 0;
+    }
+    .inner_services_content{
+        margin: 20px 30px;
+    }
+}
+@media (max-width: 946px) {
+    .services_all_content{
+        padding: 10px 0;
+    }
+    .inner_services_content{
+        margin: 20px 10px;
+    }
+}
+@media (max-width: 865px) {
+    .services_all_content{
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 10px;
+        padding: 10px;
+    }
+    .inner_services_content{
+        margin: 20px 10px;
+    }
+}

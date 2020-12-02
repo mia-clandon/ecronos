@@ -1,0 +1,12 @@
+doctype html
+html
+    head
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet" href="/stylesheets/error.css")
+    body
+        .error
+        h1= message
+        h2= error.status
+            h3
+                | Вернитесь на
+                a(href="/") главную страницу

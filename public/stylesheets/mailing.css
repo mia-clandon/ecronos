@@ -1,0 +1,30 @@
+.form-send-group{
+    display: flex;
+    flex-direction: row;
+}
+.form-send-group input{
+    padding: 10px;
+    width: 300px;
+}
+.form-send-group button{
+    background-color: #095A90;
+    color: white;
+}
+.info_about_mailing{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+}
+.info_mailing {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+@media (max-width:1100px) {
+    .form-send-group input{
+        padding: 10px;
+        width: 200px;
+    }
+}

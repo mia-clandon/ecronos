@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+body {
+    margin: 0px;
+    font-family: 'segoe ui';
+    background-color: #136098;
+}
+.content{
+    background-color: #136098;
+}
+.content_desktop img{
+    width: 94% ;
+}
+.content_phone img{
+    width: 94% ;
+}
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    background-color: #095A90;
+    position: relative;
+}
+
+.nav > .nav-header {
+    display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+    display: none;
+}
+
+.nav > .nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: baseline;
+    font-size: 1rem;
+
+}
+
+.nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;
+}
+
+.nav > .nav-links > a:hover {
+    border-bottom: 1px solid whitesmoke;
+    -moz-text-shadow:0 0 10px white;
+    -webkit-text-shadow:0 0 10px white;
+    text-shadow:0 0 10px white;
+}
+
+.nav > #nav-check {
+    display: none;
+}
+.form_mailing{
+    display: flex;
+    justify-content: center;
+}
+.form_mailing textarea{
+    width:  250px;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+button{
+    width: 100px;
+    top: 20px;
+}
+.content_desktop{
+    display: block;
+    margin: 0 auto;
+}
+@media (min-width:1201px) {
+    .content_phone {
+        display: none;
+    }
+    .content_desktop img{
+        display: block;
+        margin: 0 auto;
+    }
+}
+@media (max-width:1200px) {
+    .content_phone{
+        display: none;
+    }
+
+    .nav-header{
+        margin-top: -10px;
+    }
+    .nav > .nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 11px;
+    }
+    .nav > .nav-btn > label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+    }
+    .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    .nav > .nav-btn > label > span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid #eee;
+    }
+    .nav > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #095A90;
+        opacity: 0.9;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+    }
+    .top-logo-link img{
+        top: -10px;
+    }
+    .nav > .nav-links > a {
+        display: block;
+        width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+        height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+        z-index: 1;
+    }
+    a{
+        text-align: center;
+    }
+}
+@media (max-width:1100px) {
+    .title{
+        width: 10rem;
+    }
+    .nav > .nav-links {
+        font-size: 1.8rem;
+    }
+    .nav > .nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 11px;
+    }
+    .nav > .nav-btn > label {
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        padding: 13px;
+    }
+    .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    .nav > .nav-btn > label > span {
+        display: block;
+        width: 45px;
+        height: 12px;
+        border-top: 2px solid #eee;
+    }
+}
+@media (max-width:1050px) {
+    .title{
+        width: 10rem;
+    }
+    .content_phone{
+        display: block;
+        margin: 0 auto;
+    }
+    .content_phone img{
+        display: block;
+        margin: 0 auto;
+    }
+    .content_desktop{
+        display: none;
+    }
+}
+@media (max-width:380px){
+    body {
+        background-color: #136098;
+    }
+
+    .content_phone {
+        padding: 1px;
+    }
+
+    .content_phone img {
+        margin: 49px 5px;
+        width: 100%;
+    }
+}
+
+@media (max-width:900px) {
+    .title{
+        width: 10rem;
+    }
+    .nav > .nav-links {
+        font-size: 1.3rem;
+    }
+
+}
+

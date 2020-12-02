@@ -1,0 +1,53 @@
+html
+    head
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title Экронос
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css..")
+        script(src="https://code.jquery.com/jquery-1.6.min.js" integrity="sha256-5Y2lizFMze76PEhltLiqMVPokNeQTgRINIHY//LCfqo=" crossorigin="anonymous")
+        link(rel="stylesheet" href="/stylesheets/index.css")
+        link(rel="stylesheet" href="/stylesheets/style.css")
+        link(rel="stylesheet" href="/stylesheets/card_news.css")
+        link(rel="stylesheet" href="/stylesheets/news.css")
+        link(rel="stylesheet" href="/stylesheets/template.css")
+        link(rel="stylesheet" href="/stylesheets/services.css")
+        link(rel="stylesheet" href="/stylesheets/contacts.css")
+        link(rel="stylesheet" href="/stylesheets/show-news.css")
+        link(rel="stylesheet" href="/stylesheets/o-kompanii.css")
+        link(rel="stylesheet" href="/stylesheets/mailing.css")
+        link(rel="shortcut icon" type="image/png" href="/images/index/favicon.png")
+body
+    .nav
+        input#nav-check(type="checkbox")
+        .nav-header
+            .nav-title
+                a.top-logo-link(href="/")
+                    img.title(src="/images/logo/logo@1X.png" alt="Экронос" srcset="/images/logo/logo@2X.png 2x")
+        .nav-btn
+            label(for="nav-check")
+                span
+                span
+                span
+        .nav-links
+            .icons_social(style="display:flex; flex-direction: row; justify-content: center;")
+                a.social-icons.social-icons__vk(href="https://vk.com/ekronos" target="_blank" style="width:20px; height: 20px;")
+                    svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 511.962 511.962")
+                        path(d="M507.399 370.471c-1.376-2.304-9.888-20.8-50.848-58.816-42.88-39.808-37.12-33.344 14.528-102.176 31.456-41.92 44.032-67.52 40.096-78.464-3.744-10.432-26.88-7.68-26.88-7.68l-76.928.448s-5.696-.768-9.952 1.76c-4.128 2.496-6.784 8.256-6.784 8.256s-12.192 32.448-28.448 60.032c-34.272 58.208-48 61.28-53.6 57.664-13.024-8.416-9.76-33.856-9.76-51.904 0-56.416 8.544-79.936-16.672-86.016-8.384-2.016-14.528-3.36-35.936-3.584-27.456-.288-50.72.096-63.872 6.528-8.768 4.288-15.52 13.856-11.392 14.4 5.088.672 16.608 3.104 22.72 11.424 7.904 10.72 7.616 34.848 7.616 34.848s4.544 66.4-10.592 74.656c-10.4 5.664-24.64-5.888-55.2-58.72-15.648-27.04-27.488-56.96-27.488-56.96s-2.272-5.568-6.336-8.544c-4.928-3.616-11.84-4.768-11.84-4.768l-73.152.448s-10.976.32-15.008 5.088c-3.584 4.256-.288 13.024-.288 13.024s57.28 133.984 122.112 201.536c59.488 61.92 127.008 57.856 127.008 57.856h30.592s9.248-1.024 13.952-6.112c4.352-4.672 4.192-13.44 4.192-13.44s-.608-41.056 18.464-47.104c18.784-5.952 42.912 39.68 68.48 57.248 19.328 13.28 34.016 10.368 34.016 10.368l68.384-.96s35.776-2.208 18.816-30.336z")
+                a.social-icons.social-icons__facebook(href="https://www.facebook.com/ekronos.ru/" target="_blank")
+                    svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" style="width:20px; height: 20px;")
+                        path(d="M288 176v-64c0-17.664 14.336-32 32-32h32V0h-64c-53.024 0-96 42.976-96 96v80h-64v80h64v256h96V256h64l32-80h-96z")
+                a.social-icons.social-icons__instagram(href="https://www.instagram.com/ekronos_company/" target="_blank")
+                    svg(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512")
+                        path(d="M352 0H160C71.648 0 0 71.648 0 160v192c0 88.352 71.648 160 160 160h192c88.352 0 160-71.648 160-160V160C512 71.648 440.352 0 352 0zm112 352c0 61.76-50.24 112-112 112H160c-61.76 0-112-50.24-112-112V160C48 98.24 98.24 48 160 48h192c61.76 0 112 50.24 112 112v192z")
+                        path(d="M256 128c-70.688 0-128 57.312-128 128s57.312 128 128 128 128-57.312 128-128-57.312-128-128-128zm0 208c-44.096 0-80-35.904-80-80 0-44.128 35.904-80 80-80s80 35.872 80 80c0 44.096-35.904 80-80 80z")
+                        circle(cx="393.6" cy="118.4" r="17.056")
+            a(href="tel:+79855840854") +7(985) 584 0854
+            a(href="/" style=" margin-top: 3px") Главная
+            a(href="/o-kompanii" style=" margin-top: 3px") О компании
+            a(href="/news" style=" margin-top: 3px") Новости
+            a(href="/services" style=" margin-top: 3px") Услуги
+            a(href="/contacts" style=" margin-top: 3px") Контакты
+            a(href="/cabinet" style=" margin-top: 3px") Кабинет
+            a(href="/mailing" style=" margin-top: 3px") Отслеживание
+        a(href="/en/index")
+            img.lang_site(src="./../../images/index/england 1 (1).svg" alt="" style='margin-top:5px; width:30px')
+

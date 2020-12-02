@@ -1,0 +1,22 @@
+include navbar.pug
+.nav_header
+    a(href="/") Главная страница/
+    a(href="/mailing") Отслеживание
+    h1.header_ser Отслеживание
+    form.form-horizontal(role="form" method="post" action="/mailing/search-mail" class="form_mailing")
+        .form-group
+            label.col-md-3.control-label(for="serial_number") Номер отправления
+            .form-send-group
+                input#heading(name="serial_number")
+                button#btn-signup.btn.btn-info(type="submit") Поиск
+    .info_about_mailing
+        p(style="text-align:center;").message= message
+        if data.length
+            each item in data
+                .info_mailing
+                    p Серийный номер:&nbsp;
+                        =item.serial_number
+                    p &nbsp; Статус:&nbsp;
+                        =item.status
+                    p  &nbsp; Дата обновления:&nbsp;
+                        =item.date

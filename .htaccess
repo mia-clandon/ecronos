@@ -1,0 +1,8 @@
+SetEnv GHOST_NODE_VERSION_CHECK false
+PassengerStartupFile bin/www
+PassengerResolveSymlinksInDocumentRoot on
+Require all granted
+PassengerAppType node
+PassengerAppRoot /home/a0140451/domains/xn--j1agcbhj2f.xn--p1ai/public_html
+Options -MultiViews
+PassengerStickySessions on

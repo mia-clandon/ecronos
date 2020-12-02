@@ -1,0 +1,28 @@
+html
+    head
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title Ecronos
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css..")
+        script(src="https://code.jquery.com/jquery-1.6.min.js" integrity="sha256-5Y2lizFMze76PEhltLiqMVPokNeQTgRINIHY//LCfqo=" crossorigin="anonymous")
+        link(rel="stylesheet" href="/stylesheets/index.css")
+        link(rel="stylesheet" href="/stylesheets/style.css")
+        link(rel="stylesheet" href="/stylesheets/card_news.css")
+        link(rel="stylesheet" href="/stylesheets/news.css")
+        link(rel="stylesheet" href="/stylesheets/template.css")
+        link(rel="stylesheet" href="/stylesheets/services.css")
+        link(rel="shortcut icon" type="image/png" href="/images/index/favicon.png")
+    include navbar.pug
+    .nav_en_header
+        a(href="/") Main page/
+        a(href="/services") Services
+        h1.header_ser Services
+        #service_content_text.services_all_content
+            if data.length
+                each item in data
+                    .content_service
+                        #service_header.service_header
+                            =item.en_heading
+                        #service_description.service_description(style="font-size:18px;")
+                            =item.excerpt_en_description
+                        a(href='/en/services/read-services/'+item.id style="font-size:14px; color: #095A90;") Read more
+

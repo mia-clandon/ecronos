@@ -1,0 +1,45 @@
+body{
+}
+.desktop{
+    width: 100%;
+}
+.block_main_content_info{
+    background: -webkit-linear-gradient(180deg, rgb(21, 75, 122), rgb(19, 96, 152), rgb(11, 35, 73));
+    background: -moz-linear-gradient(180deg, rgb(21, 75, 122), rgb(19, 96, 152), rgb(11, 35, 73));
+    background: linear-gradient(180deg, rgb(21, 75, 122), rgb(19, 96, 152), rgb(11, 35, 73));
+    -webkit-box-shadow: 10px 14px 0px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 14px 0px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 14px 0px 0px rgba(0,0,0,0.75);
+    font-family: Roboto;
+    opacity: 0.9;
+    color: white;
+    font-size: 30px;
+    padding: 50px;
+    margin: 100px 350px;
+}
+
+@media (max-width: 1300px) {
+    .block_main_content_info{
+        margin: 80px;
+        padding: 25px;
+        font-size: 24px;
+    }
+}
+@media(max-width: 800px){
+    .block_main_content_info{
+        margin: 5px;
+        padding: 10px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 550px) {
+    .desktop{
+        display: none;
+    }
+    .block_main_content_info{
+        margin: 5px;
+        padding: 10px;
+        font-size: 24px;
+    }
+}

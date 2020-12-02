@@ -1,0 +1,42 @@
+.new_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.inner_form_group-img, .inner_form_group-text{
+    display: flex;
+    justify-content: center;
+}
+.inner_form_group-img img{
+    width: 400px;
+}
+.heading{
+    margin-left: 180px;
+}
+.inner_form_group-text{
+    font-family: Roboto;
+    color: black;
+    font-size: 24px;
+}
+.inner_form_group-text p{
+    width: 600px;
+    text-align: center;
+}
+.service_content_text{
+    margin: 0px;
+    color: black;
+    line-height: 30px;
+    font-size: 18px;
+    width: 90%;
+}
+@media(max-width: 600px){
+    .inner_form_group-img img, .inner_form_group-text p{
+        width: 300px;
+    }
+    .service_content_text{
+        margin: 20px;
+    }
+    .heading{
+        margin-left: 5px;
+    }
+}

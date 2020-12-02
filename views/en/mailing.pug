@@ -1,0 +1,34 @@
+html
+    head
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title Ecronos
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css..")
+        script(src="https://code.jquery.com/jquery-1.6.min.js" integrity="sha256-5Y2lizFMze76PEhltLiqMVPokNeQTgRINIHY//LCfqo=" crossorigin="anonymous")
+        link(rel="stylesheet" href="/stylesheets/index.css")
+        link(rel="stylesheet" href="/stylesheets/style.css")
+        link(rel="stylesheet" href="/stylesheets/card_news.css")
+        link(rel="stylesheet" href="/stylesheets/news.css")
+        link(rel="stylesheet" href="/stylesheets/mailing.css")
+        link(rel="shortcut icon" type="image/png" href="./images/index/favicon.png")
+    include navbar.pug
+    .nav_en_header
+        a(href="/") Main page/
+        a(href="/mailing") Tracking
+        h1.header_ser Tracking
+        form.form-horizontal(role="form" method="post" action="/en/mailing/search-mail" class="form_mailing")
+            .form-group
+                label.col-md-3.control-label(for ="serial_number") Shipping Number
+                .form-send-group
+                    input#heading(name="serial_number")
+                    button#btn-signup.btn.btn-info(type="submit") Search
+        .info_about_mailing
+            p(style="text-align:center;").message= message
+            if data.length
+                each item in data
+                    .info_mailing
+                        p Serial number:&nbsp;
+                            =item.serial_number
+                        p &nbsp; Status:&nbsp;
+                            =item.status
+                        p  &nbsp; Date :&nbsp;
+                            =item.date

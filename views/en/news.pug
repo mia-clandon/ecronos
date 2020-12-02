@@ -1,0 +1,30 @@
+html
+    head
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title Ecronos
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css..")
+        script(src="https://code.jquery.com/jquery-1.6.min.js" integrity="sha256-5Y2lizFMze76PEhltLiqMVPokNeQTgRINIHY//LCfqo=" crossorigin="anonymous")
+        link(rel="stylesheet" href="/stylesheets/index.css")
+        link(rel="stylesheet" href="/stylesheets/style.css")
+        link(rel="stylesheet" href="/stylesheets/card_news.css")
+        link(rel="stylesheet" href="/stylesheets/news.css")
+        link(rel="shortcut icon" type="image/png" href="/images/index/favicon.png")
+    include navbar.pug
+    .nav_en_header
+        a(href="/") Main page/
+        a(href="/news") News
+        h1.header_ser News
+            #news_content.news_content
+                if data.length
+                    each item in data
+                        .my-2.mx-auto.p-relative.bg-white.shadow-1.blue-hover(style="width: 355px; overflow: hidden; border-radius: 1px;")
+                            img.d-block.w-full(src="/images/news/" + item.name alt="Man with backpack")
+                            .px-2.py-2
+                                p.mb-0.small.font-weight-medium.text-uppercase.mb-1.text-muted.lts-2px
+                                    =item.dateAdd
+                                h1.ff-serif.font-weight-normal.text-black.card-heading.mt-0.mb-1(style="line-height: 1.25; font-size: 28px")
+                                    =item.en_heading
+                                p.mb-1(style="width:100%; height: 50px; overflow: hidden; padding: 5px; text-overflow: ellipsis; font-size: 14px;")
+                                    =item.en_description
+                            a.text-uppercase.d-inline-block.font-weight-medium.lts-2px.ml-2.mb-2.text-center.styled-link(href="/en/news/show-news/" + item.id)
+                                | Read more
