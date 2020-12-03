@@ -561,12 +561,16 @@ hr{
         font-size: 20px;
     }
 }
+
 @media (max-width: 1370px) {
     .content {
         padding-top: 120px;
         padding-bottom: 120px;
         padding-left: 0;
         grid-template-areas: '. . . . . . book book . license license . . uchet uchet . . .' /*2*/ '. print print print . . book book . license license .  archive . . . . . ' /*3*/ '. print print print askue1 .  askue3  bd bd b2b b2b b2b archive . . phone phone phone' /*4*/ 'b2c b2c b2c . . askue2 askue3  bd bd b2b b2b b2b archive  delivery delivery phone phone phone ' /*5*/ 'b2c b2c b2c . aqua aqua . email email courier_delivery . print_kvitantion print_kvitantion delivery delivery . . . ' /*6*/ '. . . . aqua aqua . . . . . print_kvitantion print_kvitantion . . . . .' /*6*/ '. . . . . . . . . . . . . . . . . .';
+    }
+    .content img{
+        width: 90%;
     }
     .element12_courier_delivery img{
         width: 50%;
@@ -1344,24 +1348,27 @@ hr{
 }
 @media (max-width: 1050px) {
     .content {
+        margin: 0;
         display: grid;
-        grid-template-rows: repeat(16, 6.25%);
-        grid-template-columns: repeat(8, 12.5%);
-        grid-template-areas: '. . phone phone phone phone . . .'
-        'uchet uchet uchet . . . delivery delivery delivery'
-        '. . archive archive archive  . . . . '
-        'license  license . b2b b2b . print_kvitantion print_kvitantion .'
-        'license  license  . . . courier_delivery courier_delivery courier_delivery courier_delivery'
-        '. . bd bd bd . . . .'
-        'book book book . . email email email .'
-        '. askue1 . . . . . . .'
-        '. . . askue2 . aqua . . .'
-        ' askue3 . . . . . . . .'
-        ' askue3 . . . . . . . .'
-        ' askue3 . . . . . . . .'
-        ' askue3 . . . . . . . .'
-        ' askue3 . . . . . . . .'
-        ' askue3 . . . . . . . .'
+        padding-bottom: 0;
+        grid-template-rows: repeat(13, 6.25%);
+        grid-template-columns: repeat(8, 12%);
+        grid-template-areas: '. . . phone phone . . . .'
+        'uchet uchet . . . . . delivery .'
+        '. .  archive archive . . . . . '
+        /*'. .  archive archive . . . print_kvitantion . '*/
+        '. . .  b2b . . . print_kvitantion . '
+        '. license . . .  . courier_delivery . . '
+        '. . . . bd .  . . .'
+        'book book . . . . . email .'
+        '. . . askue1  . . . . .'
+        '. . . askue1  . askue3 . . .'
+        '. . askue2 . . askue3 . aqua .'
+        '. . askue2 . . . . aqua .'
+        'print . . . . b2c . aqua .';
         'print . . . . b2c . . .';
+    }
+    .content img {
+        width: 7em;
     }
 }
