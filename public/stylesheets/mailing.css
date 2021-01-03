@@ -22,6 +22,31 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+table{
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+}
+table, tr, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+tr{
+    width: 20px;
+}
+td{
+    padding: 6px;
+}
+.first{
+    width: 3.5%;
+}
+.last{
+    width: 13.25%;
+}
+h1{
+    text-align: center;
+}
 @media (max-width:1100px) {
     .form-send-group input{
         padding: 10px;

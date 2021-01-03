@@ -19,7 +19,7 @@ router.post('/add-new', upload.single('profile'), uploadController.uploadFiles, 
         console.log('yes');
         console.log(req);
         message = "Succesfully! uploaded";
-        res.render('admin/home', {message: message, status: 'success'});
+        res.render('admin/show-news', {message: message, status: 'success'});
     }
 
 });

@@ -2496,7 +2496,7 @@ hr{
         left: 1980px;
     }
 }
-@media (min-width: 2500px) {
+@media (min-width: 2480px) {
     .hr_el1_top {
         width: 280px;
         transform: rotate(-60deg);
@@ -2613,11 +2613,30 @@ hr{
         top: 950px;
         left: 760px;
     }
+    .hr_el8_top {
+        width: 400px;
+        transform: rotate(-75deg);
+        top: 300px;
+        left: 1080px;
+    }
+
     .hr_el8_medium_left {
         width: 350px;
         transform: rotate(-173deg);
         top: 470px;
         left: 850px;
+    }
+    .hr_el8_medium_right {
+        width: 480px;
+        transform: rotate(180deg);
+        top: 500px;
+        left: 1200px;
+    }
+    .hr_el9_bottom {
+        width: 480px;
+        transform: rotate(45deg);
+        top: 350px;
+        left: 780px;
     }
     .hr_el9_top {
         width: 500px;
@@ -2631,6 +2650,20 @@ hr{
         width: 550px;
         transform: rotate(-34deg);
     }
+    .hr_el9_medium_right {
+        top: 200px;
+        left: 850px;
+        width: 450px;
+        transform: rotate(2deg);
+    }
+
+    .hr_el10_top {
+        top: 94px;
+        left: 1175px;
+        width: 150px;
+        transform: rotate(-60deg);
+    }
+
     .hr_el12_bottom
     {
         width: 520px;
@@ -2638,15 +2671,71 @@ hr{
         top: 940px;
         left: 810px;
     }
+    .hr_el12_top_right {
+        width: 450px;
+        transform: rotate(-45deg);
+        top: 600px;
+        left: 1280px;
+    }
+    .hr_el12_medium {
+        width: 480px;
+        transform: rotate(20deg);
+        top: 890px;
+        left: 1220px;
+    }
+    .hr_el13_top {
+        width: 550px;
+        transform: rotate(85deg);
+        top: 700px;
+        left: 1360px;
+    }
+    .hr_el13_top_right {
+        width: 380px;
+        transform: rotate(-20deg);
+        top: 900px;
+        left: 1600px;
+    }
+    .hr_el14_medium  {
+        width: 350px;
+        transform: rotate(85deg);
+        top: 650px;
+        left: 1780px;
+    }
+    .hr_el14_bottom
+    {
+        width: 550px;
+        transform: rotate(-45deg);
+        top: 720px;
+        left: 1840px;
+    }
+    .hr_el15_medium {
+        width: 400px;
+        transform: rotate(2deg);
+        top: 500px;
+        left: 2000px;
+    }
+    .hr_el17_medium {
+        width: 300px;
+        transform: rotate(-60deg);
+        top: 300px;
+        left: 1950px;
+    }
+    .hr_el17_bottom {
+        width: 400px;
+        transform: rotate(50deg);
+        top: 400px;
+        left: 2050px;
+    }
 }
 @media (max-width: 1000px) {
     .content {
         display: grid;
+        margin: 0;
         width: 100%;
         grid-template-rows: repeat(13, 6.25%);
-        grid-template-columns: repeat(8, 12%);
-        grid-template-areas: '. . . phone phone . . . .'
-        'uchet uchet . . . . . delivery .'
+        grid-template-columns: repeat(8, 10%);
+        grid-template-areas: '. h16 h16 phone phone . . . .'
+        'uchet h16 h16 . . . . delivery .'
         '. .  archive archive . . . . . '
         /*'. .  archive archive . . . print_kvitantion . '*/
         '. . .  b2b . . . print_kvitantion . '
@@ -2659,6 +2748,9 @@ hr{
         '. . askue2 . . . . aqua .'
         'print . . . . b2c . aqua .';
         'print . . . . b2c . . .';
+    }
+    .hr16{
+        grid-area: h16;
     }
     .content img {
         width: 7em;

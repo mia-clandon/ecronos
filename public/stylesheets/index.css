@@ -17,6 +17,7 @@ body {
 .content_desktop img{
     width: 94% ;
 }
+
 .content_phone img{
     width: 94% ;
 }
@@ -195,6 +196,7 @@ button{
     .content_phone{
         display: block;
         margin: 0 auto;
+
     }
     .content_phone img{
         display: block;
@@ -202,6 +204,9 @@ button{
     }
     .content_desktop{
         display: none;
+    }
+    .nav{
+        z-index:2;
     }
 }
 @media (max-width:380px){

@@ -70,7 +70,7 @@ app.use('/mailing', mailingRouter);
 app.use('/adminlogin', adminLoginRouter);
 app.use('/admin', adminLoginRouter);
 app.use('/adminlogin/add-services', adminAddServicesRouter);
-app.use('/adminlogin/add-news', adminAddNewsRouter);
+app.use('/admin/add-news', adminAddNewsRouter);
 app.use('/adminlogin/add-mailing', adminAddMailingRouter);
 app.use('/adminlogin/mailing', adminMailingRouter);
 app.use('/adminlogin/add-status-mailing', adminAddStatusMailingRouter);
