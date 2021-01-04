@@ -6,7 +6,7 @@ let uploadController = require('../../controllers/uploadImages');
 
 message = '';
 router.get('/', async (req, res, next) => {
-    res.render('admin/add-news', message);
+    res.render('admin/news/add_news/add-news', message);
 });
 
 router.post('/add-new', upload.single('profile'), uploadController.uploadFiles, function (req, res, next) {
@@ -14,7 +14,7 @@ router.post('/add-new', upload.single('profile'), uploadController.uploadFiles, 
     if (!req.file) {
         console.log("Not");
         message = "Error"
-        res.redirect('/admin/add-news', {message, status: 'danger'});
+        res.redirect('/admin/news/add_news/add-news', {message, status: 'danger'});
     } else {
         console.log('yes');
         console.log(req);

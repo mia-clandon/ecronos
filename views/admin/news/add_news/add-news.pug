@@ -1,0 +1,33 @@
+include ../../navbar
+div(class='form_add_news')
+    h1 Добавление новости
+    form(role="form" method="post" action="/admin/add-news/add-new" onsubmit="javascript: return process();" enctype="multipart/form-data")
+        .form_group
+            label Название новости
+            include ../../generalParts/toolbar
+            input#hidden(type='hidden' name='heading' value='')
+            #sampleeditor.editor1
+        .form_group
+            label Описание новости
+            include ../../generalParts/toolbar
+            input#hidden2(type='hidden' name='description' value='')
+            #sampleeditor2.editor
+        .form_group
+            label Название новости на английском
+            include ../../generalParts/toolbar
+            input#hidden3(type='hidden' name='en_heading' value='')
+            #sampleeditor3.editor1
+        .form_group
+            label Описание новости на английском
+            include ../../generalParts/toolbar
+            input#hidden4(type='hidden' name='en_description' value='')
+            #sampleeditor4.editor
+        .form_group
+            label(for="profile") Изображение
+            input.form-control#profile(type="file" class="custom-file-input" name="profile" accept="")
+        .form_group
+            label Дата добавления
+            input(type="date" class="input_choose_date" name="dateAdd" max="2100-12-31")
+        button(type="submit" class="button_submit") Добавить новость
+    script(src='/javascripts/admin/news/add_news.js')
+
