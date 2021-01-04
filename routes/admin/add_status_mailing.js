@@ -15,7 +15,7 @@ router.get('/', async (req, res, next) => {
             }
         })
     } else {
-        res.redirect('/adminlogin');
+        res.redirect('/admin');
     }
 });
 router.post('/add-status-mail', async (req, res, next) => {
@@ -34,7 +34,7 @@ router.post('/add-status-mail', async (req, res, next) => {
         }
     });
     } else {
-        res.render('admin/adminlogin');
+        res.render('admin/admin');
     }
 });
 module.exports = router;

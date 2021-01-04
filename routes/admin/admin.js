@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
         description: 'description',
     })
     } else {
-        res.render('admin/adminlogin');
+        res.render('admin/admin');
     }
 });
 // SHOW ADD topic FORM

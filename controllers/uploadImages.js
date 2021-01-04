@@ -29,7 +29,7 @@ const uploadFiles = async (req, res) => {
                 DIR + image.name,
                 image.data
             );
-            return res.render('home');
+            return res.render('admin/home');
         });
     } catch (error) {
         console.log(error);

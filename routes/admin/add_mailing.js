@@ -6,7 +6,7 @@ router.get('/', async (req, res, next) => {
     if (user) {
         res.render('admin/add-mailing', {data: ''})
     } else {
-        res.render('admin/adminlogin');
+        res.render('admin/admin');
     }
 });
 
@@ -30,7 +30,7 @@ router.post('/add-mail', async (req, res, next) => {
             }
         });
     } else {
-        res.redirect('/adminlogin');
+        res.redirect('/admin');
     }
 });
 

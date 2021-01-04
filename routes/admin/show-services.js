@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
       }
     })
     } else {
-      res.render('admin/adminlogin');
+      res.render('admin/admin');
     }
 });
   router.get('/show-services/(:id)', function(req, res, next){
@@ -41,7 +41,7 @@ router.get('/', function(req, res, next) {
         }
       })
     } else {
-      res.render('admin/adminlogin');
+      res.render('admin/admin');
     }
   });
   module.exports = router;

@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
             }
         })
     } else {
-        res.render('admin/adminlogin');
+        res.render('admin/admin');
     }
 });
 router.get('/show-history-mailing/(:id)', function(req, res, next){
@@ -40,7 +40,7 @@ router.get('/show-history-mailing/(:id)', function(req, res, next){
             }
         })
     } else {
-        res.render('admin/adminlogin');
+        res.render('admin/admin');
     }
 });
 module.exports = router;

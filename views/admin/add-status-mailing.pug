@@ -5,7 +5,7 @@ include navbar.pug
             .panel-heading
                 .panel-title Добавление нового почтового отправления
             .panel-body
-                form.form-horizontal(role="form" method="post" action="/adminlogin/add-status-mailing/add-status-mail")
+                form.form-horizontal(role="form" method="post" action="/admin/add-status-mailing/add-status-mail")
                     .form-group
                         label(for="mailing") Серийный номер отправления
                             input#mail(list="mailing" name="serial_number")

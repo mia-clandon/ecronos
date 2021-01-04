@@ -1,37 +1,107 @@
-include navbar.pug
-#mainform.container.col-sm-12
-    #signupbox.mainbox.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2(style=" margin-top:50px")
-        .panel.panel-info
-            .panel-heading
-                .panel-title Добавление новости
-            .panel-body
-                form.form-horizontal(role="form" method="post" action="/admin/add-news/add-new" enctype="multipart/form-data")
-                    .form-group
-                        label.col-md-3.control-label(for="heading") Название
-                        .col-sm-9
-                            textarea#heading.editor(name="heading" contenteditable="")
-                    .form-group
-                        label.col-md-3.control-label(for="description") Описание
-                        .col-sm-9
-                            textarea#description(name="description")
-                    .form-group
-                        label.col-md-3.control-label(for="en_heading") Название на английском
-                        .col-sm-9
-                            textarea#en_heading(name="en_heading")
-                    .form-group
-                        label.col-md-3.control-label(for="en_description") Описание на английском
-                        .col-sm-9
-                            textarea#en_description(name="en_description")
-                    .form-group
-                        label.col-md-3.control-label(for="start") Дата добавления
-                        .col-sm-9
-                            input#start(type="date" name="dateAdd" max="2100-12-31")
-                    .form-group
-                        label.col-md-3.control-label(for="profile") Изображение
-                        .col-sm-9
-                            input.form-control#profile(type="file" name="profile" accept="")
-                    .form-group
-                        .col-md-offset-3.col-md-9
-                            button#btn-signup.btn.btn-info(type="submit")
-                                i.icon-hand-right
-                                |  &nbsp Загрузка
+html
+    head
+        style.
+            body {
+                padding: 5% 15%;
+            }
+
+            .editor {
+                border: solid 1px #ccc;
+                padding: 20px;
+                min-height: 100px;
+            }
+
+            .sample-toolbar {
+                border: solid 1px #ddd;
+                background: #f4f4f4;
+                padding: 5px;
+                border-radius: 3px;
+            }
+
+            .sample-toolbar > span {
+                cursor: pointer;
+            }
+
+            .sample-toolbar > span:hover {
+                text-decoration: underline;
+            }
+        link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous')
+    body
+        form.form-horizontal(role="form" method="post" action="/admin/add-news/add-new" onsubmit="javascript: return process();" enctype="multipart/form-data")
+            label Название новости
+            .sample-toolbar
+                a(href='javascript:void(0)' onclick="format('bold')")
+                    span.fa.fa-bold.fa-fw
+                a(href='javascript:void(0)' onclick="format('italic')")
+                    span.fa.fa-italic.fa-fw
+                a(href='javascript:void(0)' onclick="format('insertunorderedlist')")
+                    span.fa.fa-list.fa-fw
+                a(href='javascript:void(0)' onclick='setUrl()')
+                    span.fa.fa-link.fa-fw
+            input#hidden(type='hidden' name='heading' value='')
+            #sampleeditor.editor
+            label Описание новости
+            .sample-toolbar
+                a(href='javascript:void(0)' onclick="format('bold')")
+                    span.fa.fa-bold.fa-fw
+                a(href='javascript:void(0)' onclick="format('italic')")
+                    span.fa.fa-italic.fa-fw
+                a(href='javascript:void(0)' onclick="format('insertunorderedlist')")
+                    span.fa.fa-list.fa-fw
+                a(href='javascript:void(0)' onclick='setUrl()')
+                    span.fa.fa-link.fa-fw
+            input#hidden2(type='hidden' name='description' value='')
+            #sampleeditor2.editor
+            label Название новости на английском
+                .sample-toolbar
+                    a(href='javascript:void(0)' onclick="format('bold')")
+                        span.fa.fa-bold.fa-fw
+                    a(href='javascript:void(0)' onclick="format('italic')")
+                        span.fa.fa-italic.fa-fw
+                    a(href='javascript:void(0)' onclick="format('insertunorderedlist')")
+                        span.fa.fa-list.fa-fw
+                    a(href='javascript:void(0)' onclick='setUrl()')
+                        span.fa.fa-link.fa-fw
+            input#hidden3(type='hidden' name='en_heading' value='')
+            #sampleeditor3.editor
+            label Описание новости на английском
+                .sample-toolbar
+                    a(href='javascript:void(0)' onclick="format('bold')")
+                        span.fa.fa-bold.fa-fw
+                    a(href='javascript:void(0)' onclick="format('italic')")
+                        span.fa.fa-italic.fa-fw
+                    a(href='javascript:void(0)' onclick="format('insertunorderedlist')")
+                        span.fa.fa-list.fa-fw
+                    a(href='javascript:void(0)' onclick='setUrl()')
+                        span.fa.fa-link.fa-fw
+            input#hidden4(type='hidden' name='en_description' value='')
+            #sampleeditor4.editor
+            label.col-md-3.control-label(for="profile") Изображение
+            input.form-control#profile(type="file" name="profile" accept="")
+            button#btn-signup.btn.btn-info(type="submit")
+            i.icon-hand-right
+                | &nbsp Загрузка
+        script.
+            window.addEventListener('load', function () {
+                document.getElementById('sampleeditor').setAttribute('contenteditable', 'true');
+                document.getElementById('sampleeditor2').setAttribute('contenteditable', 'true');
+                document.getElementById('sampleeditor3').setAttribute('contenteditable', 'true');
+                document.getElementById('sampleeditor4').setAttribute('contenteditable', 'true');
+            });
+            function format(command, value) {
+                document.execCommand(command, false, value);
+            }
+            function setUrl() {
+                var url = document.getElementById('txtFormatUrl').value;
+                var sText = document.getSelection();
+                document.execCommand('insertHTML', false, '<a href="' + url + '" target="_blank">' + sText + '</a>');
+                document.getElementById('heading').value = '';
+            }
+
+            function process() {
+                document.getElementById("hidden").value = document.getElementById("sampleeditor").innerHTML;
+                document.getElementById("hidden2").value = document.getElementById("sampleeditor2").innerHTML;
+                document.getElementById("hidden3").value = document.getElementById("sampleeditor3").innerHTML;
+                document.getElementById("hidden4").value = document.getElementById("sampleeditor4").innerHTML;
+                return true;
+            }

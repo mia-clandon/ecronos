@@ -5,10 +5,10 @@ const router = express.Router();
 router.get('/', (req, res, next) => {
   let user = req.session.user;
   if(user) {
-    res.redirect('/adminlogin/home');
+    res.redirect('/admin/home');
     return;
   }
-  res.render('admin/adminlogin');
+  res.render('admin/admin');
 });
 
 // Get home page
@@ -19,16 +19,16 @@ router.get('/home', (req, res, next) => {
     res.render('admin/home', {opp:req.session.opp, name:user.fullname});
     return;
   }
-  res.redirect('/adminlogin/adminlogin');
+  res.redirect('/admin/admin');
 });
 router.post('/login', (req, res, next) => {
   loginUser(req.body.username, req.body.password, function(result) {
     if(result) {
       req.session.user = result;
       req.session.opp = 1;
-      res.redirect('/adminlogin/home');
+      res.redirect('/admin/home');
     }else {
-      res.render('admin/adminlogin', {message: 'Пароль или логин неверен'});
+      res.render('admin/admin', {message: 'Пароль или логин неверен'});
     }
   })
 });
@@ -46,7 +46,7 @@ router.post('/login', (req, res, next) => {
 //         res.redirect('/home');
 //       });
 //     }else {
-//       res.render('admin/adminlogin', {message: 'Ошибка при создании нового пользователя'});
+//       res.render('admin/admin', {message: 'Ошибка при создании нового пользователя'});
 //     }
 //   });
 // });
@@ -56,7 +56,7 @@ router.post('/login', (req, res, next) => {
 router.get('/loggout', (req, res, next) => {
   if(req.session.user) {
     req.session.destroy(function() {
-      res.redirect('/adminlogin');
+      res.redirect('/admin');
     });
   }
 });
