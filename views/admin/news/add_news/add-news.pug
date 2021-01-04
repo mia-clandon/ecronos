@@ -1,33 +1,61 @@
 include ../../navbar
 div(class='form_add_news')
     h1 Добавление новости
-    form(role="form" method="post" action="/admin/add-news/add-new" onsubmit="javascript: return process();" enctype="multipart/form-data")
+    form(role="form" method="post" action="/admin/add-news/add-new" onsubmit="javascript: return process(this);" enctype="multipart/form-data" class="form-validate")
+        p * Поля обязательные к заполнению
         .form_group
-            label Название новости
+            label Название новости *
             include ../../generalParts/toolbar
-            input#hidden(type='hidden' name='heading' value='')
+            input#hidden(
+                type='hidden'
+                name='heading'
+                value='')
             #sampleeditor.editor1
+            p#err_hidden(class="error")
         .form_group
-            label Описание новости
+            label Описание новости *
             include ../../generalParts/toolbar
-            input#hidden2(type='hidden' name='description' value='')
+            input#hidden2(
+                type='hidden'
+                name='description'
+                value='')
             #sampleeditor2.editor
+            p#err_hidden2(class="error")
         .form_group
-            label Название новости на английском
+            label Название новости на английском *
             include ../../generalParts/toolbar
-            input#hidden3(type='hidden' name='en_heading' value='')
+            input#hidden3(
+                type='hidden'
+                name='en_heading'
+                value='')
             #sampleeditor3.editor1
+            p#err_hidden3(class="error")
         .form_group
-            label Описание новости на английском
+            label Описание новости на английском *
             include ../../generalParts/toolbar
-            input#hidden4(type='hidden' name='en_description' value='')
+            input#hidden4(
+                type='hidden'
+                name='en_description'
+                value='')
             #sampleeditor4.editor
+            p#err_hidden4(class="error")
         .form_group
-            label(for="profile") Изображение
-            input.form-control#profile(type="file" class="custom-file-input" name="profile" accept="")
+            label(for="profile") Изображение *
+            input.form-control#profile(
+                type="file"
+                class="custom-file-input"
+                name="profile"
+                accept="")
+            p#err_hidden5(class="error")
         .form_group
-            label Дата добавления
-            input(type="date" class="input_choose_date" name="dateAdd" max="2100-12-31")
+            label Дата добавления *
+            input#hidden6(
+                type="date"
+                class="input_choose_date"
+                name="dateAdd"
+                max="2100-12-31")
+            p#err_hidden6(class="error")
+        p#hidden_errors(class="error")
         button(type="submit" class="button_submit") Добавить новость
     script(src='/javascripts/admin/news/add_news.js')
 

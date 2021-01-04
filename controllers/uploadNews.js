@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 const db = require("../core/SequilizeCore");
-const Image = db.images;
+const Image = db.news;
 const DIR ='./public/images/news/';
 
 
@@ -9,8 +9,9 @@ const uploadFiles = async (req, res) => {
     try {
         console.log(req.file);
 
-        if (req.file == undefined) {
-            return res.send(`You must select a file.`);
+        if (req.file === undefined) {
+            let message = "Вы не загрузили изображение"
+            return res.send(message);
         }
 
         Image.create({
