@@ -45,7 +45,7 @@ td{
     width: 13.25%;
 }
 h1{
-    text-align: center;
+    /*text-align: center;*/
 }
 @media (max-width:1100px) {
     .form-send-group input{
