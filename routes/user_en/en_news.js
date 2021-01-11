@@ -4,7 +4,7 @@ let router = express.Router();
 let pool = require('../../core/pool');
 
 router.get('/', function(req, res, next) {
-  const query = 'SELECT * FROM images order by id asc';
+  const query = 'SELECT * FROM news order by id asc';
   pool.query(query, function (err, rows) {
     if(err) {
       req.flash('error', err);
@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/show-news/(:id)', function(req, res, next){
-  let query = 'SELECT * FROM images WHERE id = ' + req.params.id;
+  let query = 'SELECT * FROM news WHERE id = ' + req.params.id;
 
   pool.query( query, function(err, rows, fields) {
     if(err) throw err

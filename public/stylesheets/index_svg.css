@@ -561,14 +561,20 @@ hr{
     .nav > .nav-links {
         font-size: 20px;
     }
-    hr{
-        position: absolute;
-        z-index: 0;
-        background-color: whitesmoke;
-        border: none;
-        height: 1.5px;
-
+    .content{
+        padding: 0;
+        margin: 0;
     }
+    hr{
+        display: none;
+    }
+    /*hr{*/
+    /*    position: absolute;*/
+    /*    z-index: 0;*/
+    /*    background-color: whitesmoke;*/
+    /*    border: none;*/
+    /*    height: 1.5px;*/
+    /*}*/
     .hr_el1_top{
         width: 150px;
         transform: rotate(-45deg);
@@ -587,6 +593,12 @@ hr{
         transform: rotate(-95deg);
         top: 360px;
         left: -90px;
+    }
+    .hr_el2_bottom {
+        width: 150px;
+        transform: rotate(45deg);
+        top: 500px;
+        left: 150px;
     }
     .hr_el3_top{
         width: 180px;
@@ -607,6 +619,12 @@ hr{
         top: 270px;
         left: 115px;
     }
+    .hr_el5_medium_left {
+        width: 150px;
+        transform: rotate(-10deg);
+        top: 430px;
+        left: 160px;
+    }
     .hr_el9_top {
         width: 200px;
         transform: rotate(45deg);
@@ -624,6 +642,12 @@ hr{
         transform: rotate(80deg);
         top: 320px;
         left: 220px;
+    }
+    .hr_el13_top {
+        width: 150px;
+        transform: rotate(50deg);
+        top: 445px;
+        left: 80px;
     }
 }
 @media (max-width: 1026px) {
@@ -2800,25 +2824,34 @@ hr{
         display: grid;
         margin: 0;
         width: 100%;
-        grid-template-rows: repeat(13, 6.25%);
-        grid-template-columns: repeat(8, 10%);
-        grid-template-areas: '. h16 h16 phone phone . . . .'
-        'uchet h16 h16 . . . . delivery .'
-        '. .  archive archive . . . . . '
-        /*'. .  archive archive . . . print_kvitantion . '*/
-        '. . .  b2b . . . print_kvitantion . '
-        '. license . . .  . courier_delivery . . '
-        '. . . . bd .  . . .'
-        'book book . . . . . email .'
-        '. . . askue1  . . . . .'
-        '. . . askue1  . askue3 . . .'
-        '. . askue2 . . askue3 . aqua .'
-        '. . askue2 . . . . aqua .'
-        'print . . . . b2c . aqua .';
-        'print . . . . b2c . . .';
+        grid-template-rows: repeat(auto-fit, 6%);
+        grid-template-columns: repeat(8, 8.5%);
+        grid-template-areas: '. . . phone phone . . . .'
+        'uchet . . . . . . delivery .'
+        'uchet . . . . archive . delivery .'
+        'uchet . . . b2b archive . . print_kvitantion'
+        '. license . . b2b archive . . print_kvitantion'
+        '. license . . b2b . . courier_delivery print_kvitantion'
+        '. license . .  bd . . courier_delivery . '
+        'book book . .  bd . . email .'
+        'book book . askue3 . .  . email .'
+        '. . . askue3  . askue2 . . .'
+        '. . askue1 . . askue2 . . aqua'
+        '. . askue1 . . . . . aqua'
+        'print . . . . . b2c . aqua';
+        'print . . . . . b2c  . .';
     }
-    .content img {
+    .block-size_4 img{
         width: 7em;
+    }
+    .block-size_3 img{
+        width: 6em;
+    }
+    .block-size_2 img{
+        width: 4.5em;
+    }
+    .block-size_1 img{
+        width: 4em;
     }
 }
 @media (min-height: 1330px) {

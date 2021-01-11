@@ -1,12 +1,16 @@
 let express = require('express');
 let router = express.Router();
-let pool = require('../../../core/pool');
 let upload = require('../../../middlewares/uploadImages');
 let uploadController = require('../../../controllers/uploadNews');
 
 message = '';
 router.get('/', async (req, res, next) => {
-    res.render('admin/news/add_news/add-news', message);
+    let user = req.session.user;
+    if(user) {
+        res.render('admin/news/add_news/add-news', message);
+    } else {
+        res.render('admin/adminlogin')
+    }
 });
 
 router.post('/add-new', upload.single('profile'), uploadController.uploadFiles, async function (req, res, next) {
