@@ -2825,21 +2825,22 @@ hr{
         margin: 0;
         width: 100%;
         grid-template-rows: repeat(auto-fit, 6%);
-        grid-template-columns: repeat(8, 8.5%);
-        grid-template-areas: '. . . phone phone . . . .'
-        'uchet . . . . . . delivery .'
-        'uchet . . . . archive . delivery .'
-        'uchet . . . b2b archive . . print_kvitantion'
-        '. license . . b2b archive . . print_kvitantion'
-        '. license . . b2b . . courier_delivery print_kvitantion'
-        '. license . .  bd . . courier_delivery . '
-        'book book . .  bd . . email .'
-        'book book . askue3 . .  . email .'
-        '. . . askue3  . askue2 . . .'
-        '. . askue1 . . askue2 . . aqua'
-        '. . askue1 . . . . . aqua'
-        'print . . . . . b2c . aqua';
-        'print . . . . . b2c  . .';
+        grid-template-columns: repeat(9, 7.5%);
+        grid-template-areas: '. . . . phone phone . . . .'
+        '. uchet . . . . . . delivery .'
+        '. uchet . . . . archive . delivery .'
+        '. uchet . . . b2b archive . . print_kvitantion'
+        '. . license . . b2b archive . . print_kvitantion'
+        '. . license . . b2b . . courier_delivery print_kvitantion'
+        '. . license . .  bd . . courier_delivery . '
+        '. book book . .  bd . . email .'
+        '. book book . askue3  bd . . email .'
+        '. book book . askue3 . askue2  . email .'
+        /*'. . . askue3  . askue2 . . .'*/
+        '. . . askue1 . . askue2 . . aqua'
+        '. . . askue1 . . . . . aqua'
+        '. print . . . . . b2c . aqua';
+        /*'print . . . . . b2c  . .';*/
     }
     .block-size_4 img{
         width: 7em;
