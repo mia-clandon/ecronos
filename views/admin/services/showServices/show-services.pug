@@ -1,0 +1,36 @@
+include ../../generalParts/navbar
+.nav_header
+    #service_content_text.services_all_content
+        if data.length
+            each item in data
+                .content_service
+                    #service_header.service_header(style="font-size:18px; max-width:500px;")
+                        =item.heading
+                    #service_description.service_description(style="font-size:18px; max-width:500px;")
+                        =item.excerpt_description
+                    a(href='/services/read-services/' + item.id style="font-size:14px; color: #095A90;")
+                        | Прочитать подробнее
+script.
+    $('#service_header').each(function () {
+        var $this = $(this);
+        var t = $this.text();
+        $this.html(t.replace('&lt', '<').replace('&gt', '>'));
+    });
+script.
+    $('#service_description').each(function () {
+        var $this = $(this);
+        var t = $this.text();
+        $this.html(t.replace('&lt', '<').replace('&gt', '>'));
+    });
+script.
+    $('#service_enheader').each(function () {
+        var $this = $(this);
+        var t = $this.text();
+        $this.html(t.replace('&lt', '<').replace('&gt', '>'));
+    });
+script.
+    $('#service_endescription').each(function () {
+        var $this = $(this);
+        var t = $this.text();
+        $this.html(t.replace('&lt', '<').replace('&gt', '>'));
+    });

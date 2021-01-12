@@ -1,0 +1,45 @@
+include ../../generalParts/navbar
+#mainform.container.col-sm-12
+    #signupbox.mainbox.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2(style=" margin-top:50px")
+        .panel.panel-info
+            .panel-heading
+                .panel-title Добавление нового почтового отправления
+            .panel-body
+                label(for="browser") Choose your browser from the list:
+                    input#browser(list="browsers" name="browser")
+                    datalist#browsers
+                        option(value="Edge")
+                        option(value="Firefox")
+                        option(value="Chrome")
+                        option(value="Opera")
+                        option(value="Safari")
+                form.form-horizontal(role="form" method="post" action="/admin/add-mailing/add-mail")
+                    .form-group
+                        label.col-md-3.control-label(for="serial_number") Серийный номер
+                        .col-sm-9
+                            textarea#serial_number(name="serial_number")
+                    .form-group
+                        label.col-md-3.control-label(for="firstname") Имя
+                        .col-sm-9
+                            textarea#firstname(name="firstname")
+                    .form-group
+                        label.col-md-3.control-label(for="lastname") Фамилия
+                        .col-sm-9
+                            textarea#lastname(name="lastname")
+                    .form-group
+                        label.col-md-3.control-label(for="patronymic") Отчество
+                        .col-sm-9
+                            textarea#patronymic(name="patronymic")
+                    .form-group
+                        label.col-md-3.control-label(for="tocity") Куда
+                        .col-sm-9
+                            textarea#tocity(name="tocity")
+                    .form-group
+                        label.col-md-3.control-label(for="wherecity") Откуда
+                        .col-sm-9
+                            textarea#wherecity(name="wherecity")
+                    .form-group
+                        .col-md-offset-3.col-md-9
+                            button#btn-signup.btn.btn-info(type="submit")
+                                i.icon-hand-right
+                                |  &nbsp Загрузка

@@ -1,0 +1,20 @@
+include ../../generalParts/navbar
+.nav_header
+    #news_content.news_content
+        if data.length
+            each item in data
+                .my-2.mx-auto.p-relative.bg-white.shadow-1.blue-hover(style="width: 360px; overflow: hidden; border-radius: 1px;")
+                    img.d-block.w-full(src="/images/news/" + item.name alt="Man with backpack")
+                    .px-2.py-2
+                        p.mb-0.small.font-weight-medium.text-uppercase.mb-1.text-muted.lts-2px
+                        =item.dateAdd
+                        h1.ff-serif.font-weight-normal.text-black.card-heading.mt-0.mb-1(style="line-height: 1.25; font-size: 28px")
+                        =item.heading
+                        p.mb-1(style="width:100%; height: 50px; overflow: hidden; padding: 5px; text-overflow: ellipsis; font-size: 14px;")
+                        =item.description
+                        h1.ff-serif.font-weight-normal.text-black.card-heading.mt-0.mb-1(style="line-height: 1.25; font-size: 28px")
+                        =item.en_heading
+                        p.mb-1(style="width:100%; height: 50px; overflow: hidden; padding: 5px; text-overflow: ellipsis; font-size: 14px;")
+                        =item.en_description
+                    a.text-uppercase.d-inline-block.font-weight-medium.lts-2px.ml-2.mb-2.text-center.styled-link(href="/news/read-news/#{item.id}")
+                    | Прочитать подробнее
