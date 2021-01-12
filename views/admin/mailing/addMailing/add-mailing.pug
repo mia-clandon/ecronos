@@ -3,16 +3,7 @@ include ../../generalParts/navbar
     #signupbox.mainbox.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2(style=" margin-top:50px")
         .panel.panel-info
             .panel-heading
-                .panel-title Добавление нового почтового отправления
-            .panel-body
-                label(for="browser") Choose your browser from the list:
-                    input#browser(list="browsers" name="browser")
-                    datalist#browsers
-                        option(value="Edge")
-                        option(value="Firefox")
-                        option(value="Chrome")
-                        option(value="Opera")
-                        option(value="Safari")
+                h2 Добавление нового почтового отправления
                 form.form-horizontal(role="form" method="post" action="/admin/add-mailing/add-mail")
                     .form-group
                         label.col-md-3.control-label(for="serial_number") Серийный номер

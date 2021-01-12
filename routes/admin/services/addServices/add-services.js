@@ -8,7 +8,7 @@ router.get('/', function (req, res) {
     if(user) {
         res.render('admin/services/addServices/add-services', message)
     }
-    res.redirect('/admin/auth/login');
+    res.redirect('/admin');
 });
 
 router.post('/add-service', async (req, res, next) => {
@@ -30,7 +30,7 @@ router.post('/add-service', async (req, res, next) => {
             }
         });
     } else {
-        res.redirect('/admin/auth/login');
+        res.redirect('/admin');
     }
 });
 

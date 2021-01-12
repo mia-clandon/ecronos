@@ -11,21 +11,21 @@ include navbar.pug
                         .px-2.py-2
                             p.mb-0.small.font-weight-medium.text-uppercase.mb-1.text-muted.lts-2px
                                 =item.dateAdd
-                            h1#header.ff-serif.font-weight-normal.text-black.card-heading.mt-0.mb-1(style="line-height: 1.25; font-size: 28px")
+                            h1#header(style="line-height: 1.25; font-size: 28px")
                                 =item.heading
+                            script.
+                                $('#header').each(function () {
+                                    var $this = $(this);
+                                    var t = $this.text();
+                                    $this.html(t.replace('&lt', '<').replace('&gt', '>'));
+                                });
                             p#description.mb-1(style="width:100%; height: 50px; overflow: hidden; padding: 5px; text-overflow: ellipsis; font-size: 14px;")
                                 =item.description
                         a.text-uppercase.d-inline-block.font-weight-medium.lts-2px.ml-2.mb-2.text-center.styled-link(href="/news/read-news/" + item.id)
                             | Прочитать подробнее
-    script.
-        $('#header').each(function () {
-            var $this = $(this);
-            var t = $this.text();
-            $this.html(t.replace('&lt', '<').replace('&gt', '>'));
-        });
-    script.
-        $('#description').each(function () {
-            var $this = $(this);
-            var t = $this.text();
-            $this.html(t.replace('&lt', '<').replace('&gt', '>'));
-        });
+                        script.
+                            $('#description').each(function () {
+                                var $this = $(this);
+                                var t = $this.text();
+                                $this.html(t.replace('&lt', '<').replace('&gt', '>'));
+                            });

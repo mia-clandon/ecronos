@@ -22,15 +22,16 @@ router.post('/add-mail', async (req, res, next) => {
             wherecity: req.body.wherecity,
             date: req.body.date,
         };
-        getCreateNewMail(mailInput, function (lastId) {
-            if (lastId) {
+        getCreateNewMail(mailInput, function (serial_number) {
+            if (serial_number) {
+                // getSearchMail()
                 res.render('admin/mailing/addMailing/add-mailing');
             } else {
                 console.log("Что-то пошло не так");
             }
         });
     } else {
-        res.redirect('/admin/auth/login');
+        res.redirect('/admin');
     }
 });
 

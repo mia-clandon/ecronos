@@ -19,7 +19,7 @@ router.get('/home', (req, res, next) => {
     res.render('admin/home', {opp:req.session.opp, name:user.fullname});
     return;
   }
-  res.redirect('/admin/auth/login');
+  res.redirect('/admin');
 });
 router.post('/login', (req, res, next) => {
   loginUser(req.body.username, req.body.password, function(result) {
@@ -43,7 +43,7 @@ router.post('/register', (req, res, next) => {
       getFindUser(lastId, function(result) {
         req.session.user = result;
         req.session.opp = 0;
-        res.redirect('/home');
+        res.redirect('/admin/home');
       });
     }else {
       res.render('admin/admin', {message: 'Ошибка при создании нового пользователя'});
@@ -56,7 +56,7 @@ router.post('/register', (req, res, next) => {
 router.get('/loggout', (req, res, next) => {
   if(req.session.user) {
     req.session.destroy(function() {
-      res.redirect('/admin/auth/login');
+      res.redirect('/admin');
     });
   }
 });

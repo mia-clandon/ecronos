@@ -15,7 +15,7 @@ router.get('/', async (req, res, next) => {
             }
         })
     } else {
-        res.redirect('/admin/auth/login');
+        res.redirect('/admin');
     }
 });
 router.post('/add-status-mail', async (req, res, next) => {

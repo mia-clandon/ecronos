@@ -2,14 +2,20 @@ include navbar_inner.pug
 .nav_header
     a(href="/") Главная страница/
     a(href="/news") Новости/
-    a(href="/news/read-news/" + id) #{heading}
-        .new_content
-            .inner_form_group-text
-                p#header #{heading}
-            .inner_form_group-img
-                img(src="/images/news/" + name alt="Man with backpack")
-            .inner_form_group-text
-                p#description #{description}
+    a#header_ser(href="/news/read-news/" + id) #{heading}
+    .new_content
+        .inner_form_group-text
+            p#header #{heading}
+        .inner_form_group-img
+            img(src="/images/news/" + name alt="Man with backpack")
+        .inner_form_group-text
+            p#description #{description}
+    script.
+        $('#header_ser').each(function () {
+            var $this = $(this);
+            var t = $this.text();
+            $this.html(t.replace('&lt', '<').replace('&gt', '>'));
+        });
     script.
         $('#header').each(function () {
             var $this = $(this);
